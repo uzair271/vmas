@@ -65,12 +65,11 @@ export default function MaintenanceRecords() {
         onChangeText={setNewMileage}
       />
 
-      {/* Add or Update Button */}
       <TouchableOpacity style={styles.addButton} onPress={editingId ? updateRecord : addRecord}>
         <Text style={styles.buttonText}>{editingId ? 'Update Record' : 'Add Record'}</Text>
       </TouchableOpacity>
 
-      {/* List of Maintenance Records */}
+     
       <FlatList
         data={records}
         keyExtractor={(item) => item.id}

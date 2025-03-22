@@ -7,6 +7,7 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import VehicleData from './VehicleData'; 
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -41,10 +42,17 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-  name="MaintenanceRecords"
-  options={{ title: "Maintenance" }}
-/>
-
+        name="MaintenanceRecords"
+        options={{ title: "Maintenance" }}
+      />
+      <Tabs.Screen
+        name="VehicleData" // ✅ Added "Car Brands" tab
+        options={{ 
+          title: "Car Brands",
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="car.fill" color={color} />,
+        }}
+      />
+      
     </Tabs>
   );
 }
